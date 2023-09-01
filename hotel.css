@@ -1,0 +1,549 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.img {
+  width: 100%;
+}
+
+body {
+  font-family: "oswald", arial, helvetica, sans-serif;
+  background-color: #ffffff;
+
+  margin: 50px;
+}
+
+/* container */
+.container {
+  display: grid;
+  gap: 8px;
+}
+
+/* header */
+.header {
+  display: grid;
+  grid-template-areas:
+    "hero hero feature-1"
+    "hero hero feature-2";
+}
+
+.hero {
+  grid-area: hero;
+  min-height: 400px;
+  background-image: url(img/y.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+.hero > * {
+  display: none;
+}
+
+.features {
+  background-color: #000;
+  color: rgba(192, 192, 192, 0.884);
+  display: grid;
+  place-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.feature-1 {
+  grid-area: feature-1;
+  background-image: url(img/interior.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.feature-1 p {
+  color: rgba(2, 2, 2, 0.849);
+}
+
+.feature-2 {
+  grid-area: feature-2;
+  background-image: url(img/makan.jpg);
+  background-size: cover;
+  /* background-repeat: no-repeat;
+    background-position: center; */
+}
+
+.feature-2 p {
+  color: black;
+}
+
+.features .price {
+  font-weight: 200;
+}
+
+.menu {
+  order: -1;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+
+.menu .brand {
+  font-size: 1.3em;
+  color: #202020;
+}
+
+.menu ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 5px;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+.menu a {
+  display: block;
+  background-color: rgb(83, 52, 29);
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  text-align: center;
+  padding: 5px;
+}
+
+/* Menu Toggle */
+
+.menu-toggle {
+  width: 28px;
+  height: 20px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  opacity: 0;
+  left: -6px;
+  top: -3px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: rgb(175, 173, 40);
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+/* HAMBURGER MENU ANIMATION */
+/* anak ke 2 */
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0, 0;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  transform: rotate(46deg) translate(8px, 1px);
+}
+
+/* Anak ke 4 */
+
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0, 100px;
+}
+
+/* anak ke 3 */
+.menu-toggle input:checked ~ span:nth-child(3) {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+  transform: rotate(-49deg) translate(10px, -3px);
+}
+
+/* booked */
+
+.Booking {
+  text-align: center;
+  padding: 40px;
+  background-image: url(img/interior.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  color: white;
+  border-radius: 3px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+  background-color: transparent;
+}
+
+form {
+  background-color: transparent;
+}
+
+/* service */
+.Services {
+  margin-top: 100px;
+
+  margin: 30px;
+}
+.Services h4 {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* labeel */
+label {
+  /* display: block; */
+  padding: 7px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 90px;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+
+/* SERPICE */
+.Services h2 {
+  font-family: "Tenor Sans", sans-serif;
+
+  font-size: 1.4em;
+  margin-top: 10px;
+}
+.Services p {
+  font-family: "silka", sans-serif;
+  text-align: left;
+}
+
+/* dining */
+.dining {
+  font-family: "Tenor Sans", sans-serif;
+  text-align: center;
+  margin-top: 30px;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.container-2 {
+  grid-template-columns: repeat(minmax(120px, 1fr));
+  width: 90%;
+  grid-gap: 5px;
+  display: grid;
+  grid-template-areas:
+    "gambar1 gambar2"
+    "gambar3 gambar4";
+  margin: auto;
+  cursor: pointer;
+}
+
+.gambar1 {
+  grid-area: gambar1;
+}
+.gambar2 {
+  grid-area: gambar2;
+}
+.gambar3 {
+  grid-area: gambar4;
+}
+.gambar3 {
+  grid-area: gambar3;
+  margin-top: -390px;
+}
+
+/* MAKANAN */
+
+.makanan {
+  text-align: center;
+  margin-top: 100px;
+  font-family: "Tenor Sans", sans-serif;
+}
+
+.container-3 {
+  grid-template-columns: repeat(minmax(200px, 1fr));
+  width: 70%;
+  grid-gap: 10px;
+  display: grid;
+  margin: 30px auto;
+  grid-template-areas: "satu dua";
+}
+
+.container-3 img {
+  display: block;
+  width: 100%;
+}
+
+.item1 {
+  grid-area: "satu";
+}
+.item2 {
+  grid-area: "dua";
+}
+
+/* SPA */
+
+.spa {
+  margin: 100px auto;
+  text-align: center;
+}
+
+.spa h3 {
+  font-size: 2.5em;
+  font-family: "Tenor Sans", sans-serif;
+}
+
+.container-4 {
+  grid-template-columns: repeat(minmax(150px, 1fr));
+  width: 70%;
+  grid-gap: 10px;
+  display: grid;
+  margin: 30px auto;
+  grid-template-areas:
+    "s1 s2"
+    "s3 s4";
+}
+
+.spa1 {
+  grid-area: "s1";
+}
+.spa2 {
+  grid-area: "s2";
+}
+.spa3 {
+  grid-area: "s3";
+  margin-top: -100px;
+}
+.spa4 {
+  grid-area: "s4";
+}
+.container-4 img {
+  display: block;
+  width: 100%;
+}
+
+/* Gym */
+
+.gym {
+  margin: 300px auto;
+  text-align: center;
+}
+
+.gym h3 {
+  font-size: 2em;
+  font-family: "Tenor Sans", sans-serif;
+}
+
+.container-5 {
+  grid-template-columns: repeat(minmax(150px, 1fr));
+  width: 70%;
+  grid-gap: 10px;
+  display: grid;
+  margin: 30px auto;
+  grid-template-areas:
+    "g1 g2"
+    "g3 g4";
+}
+
+.gym1 {
+  grid-area: "g1";
+}
+.gym2 {
+  grid-area: "g2";
+}
+.gym3 {
+  grid-area: "g3";
+  margin-top: -300px;
+}
+.gym4 {
+  grid-area: "g4";
+}
+
+/* MUSIK STUDIO */
+
+.studio {
+  margin: 300px auto;
+  text-align: center;
+}
+
+.studio h3 {
+  font-size: 2em;
+  font-family: "Tenor Sans", sans-serif;
+}
+
+.container-6 {
+  grid-template-columns: repeat(minmax(150px, 1fr));
+  width: 70%;
+  grid-gap: 10px;
+  display: grid;
+  margin: 30px auto;
+  grid-template-areas:
+    "m1 m2"
+    "m3 m4";
+}
+
+.container-6 img {
+  display: block;
+  width: 100%;
+}
+
+.musik1 {
+  grid-area: "m1";
+}
+.musik2 {
+  grid-area: "m2";
+}
+.musik3 {
+  grid-area: "m3";
+}
+.musik4 {
+  grid-area: "m4";
+}
+
+/* Akhir */
+.akhir {
+  margin: 100px auto;
+  text-align: center;
+}
+.akhir h3 {
+  font-family: "Tenor Sans", sans-serif;
+  font-weight: 200px;
+}
+
+.akhir p {
+  font-size: 16px;
+}
+/* /* BREAKPOINT  */
+
+@media screen and (max-width: 1024px) {
+  .menu {
+    order: inherit;
+    grid-template-columns: 1fr;
+  }
+
+  .menu .brand {
+    display: none;
+  }
+
+  .hero > * {
+    display: block;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    margin-bottom: 5px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+  }
+
+  .gambar3 {
+    grid-area: gambar3;
+    margin-top: -220px;
+  }
+
+  /* spa */
+  .spa3 {
+    grid-area: "s3";
+    margin-top: -60px;
+  }
+
+  /* gym */
+  .gym3 {
+    grid-area: "s3";
+    margin-top: -180px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menu {
+    order: -1;
+    justify-items: end;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+  .menu-toggle span {
+    z-index: 2;
+  }
+
+  .menu ul {
+    display: flex;
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    flex-direction: column;
+    background-color: rgb(255, 249, 249);
+
+    top: 0;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    transform: translateY(-100%);
+    transition: all 1s;
+  }
+
+  .menu ul.slide {
+    transform: translateY(0);
+  }
+
+  .menu a {
+    background-color: transparent;
+    color: #ffd92e;
+  }
+
+  .gambar3 {
+    grid-area: gambar3;
+    margin-top: -145px;
+  }
+
+  /* spa */
+  .spa3 {
+    grid-area: "s3";
+    margin-top: -40px;
+  }
+
+  /* gym */
+  .gym3 {
+    grid-area: "s3";
+    margin-top: -120px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    grid-template-areas:
+      "hero"
+      "feature-1"
+      "feature-2";
+  }
+
+  .gambar3 {
+    grid-area: gambar3;
+    margin-top: -90px;
+  }
+
+  /*SPA */
+  .spa3 {
+    grid-area: "s3";
+    margin-top: -20px;
+  }
+
+  /* gym */
+  .gym3 {
+    grid-area: "s3";
+    margin-top: -70px;
+  }
+}
